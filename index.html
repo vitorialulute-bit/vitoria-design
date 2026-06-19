@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,23 +6,24 @@
 <title>Vitória Silva Design</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin:0;
-  font-family:Arial;
-  background:#000;
+  font-family:'Poppins', sans-serif;
+  background: linear-gradient(135deg, #000, #1a0010);
   color:#fff;
 }
+
 header {
   text-align:center;
-  padding:60px;
-  background:#111;
+  padding:80px 20px;
 }
 
 h1 {
   color:#ff4da6;
-  font-size:42px;
-  margin:0;
+  font-size:44px;
 }
 
 p {
@@ -30,22 +32,22 @@ p {
 
 .btn {
   background:#ff4da6;
-  padding:15px 25px;
-  color:#fff;
-  border-radius:10px;
+  padding:15px 30px;
+  border-radius:30px;
   text-decoration:none;
+  color:white;
   display:inline-block;
   margin-top:20px;
   transition:0.3s;
 }
 
 .btn:hover {
-  background:#ff1a8c;
   transform:scale(1.05);
+  background:#ff1a8c;
 }
 
 .section {
-  padding:50px;
+  padding:60px 20px;
   text-align:center;
 }
 
@@ -57,22 +59,27 @@ p {
 
 .card {
   background:#111;
-  margin:10px;
+  margin:15px;
   padding:20px;
-  border-radius:10px;
+  border-radius:15px;
   width:250px;
-  box-shadow:0 0 15px rgba(255,77,166,0.2);
   transition:0.3s;
 }
 
 .card:hover {
-  transform:translateY(-5px);
+  transform:translateY(-10px);
+}
+
+.portfolio img {
+  width:250px;
+  border-radius:10px;
+  margin:10px;
 }
 
 footer {
-  background:#111;
-  padding:20px;
   text-align:center;
+  padding:30px;
+  background:#111;
 }
 
 .whatsapp {
@@ -84,7 +91,7 @@ footer {
   border-radius:50%;
   text-decoration:none;
   color:white;
-  font-size:20px;
+  font-size:22px;
 }
 </style>
 </head>
@@ -93,72 +100,68 @@ footer {
 
 <header>
 <h1>Vitória Silva Design</h1>
-<p>Design premium, marketing e presença digital</p>
+<p>Transformando marcas em autoridade digital</p>
 
-<a class="btn" href="https://wa.me/5531999999999" target="_blank">
+<a class="btn" href="https://wa.me/5531999999999">
 Falar no WhatsApp
 </a>
-
 </header>
 
 <div class="section">
-<h2>Serviços</h2>
+<h2>🚀 Serviços</h2>
 
 <div class="cards">
-<div class="card">🎨 Design para Instagram</div>
+<div class="card">🎨 Artes para Instagram</div>
 <div class="card">🌐 Criação de Sites</div>
-<div class="card">📈 Tráfego Pago</div>
+<div class="card">📈 Gestão de Tráfego</div>
 </div>
-
 </div>
 
 <div class="section">
-<h2>Por que escolher?</h2>
+<h2>💰 Por que escolher?</h2>
 <p>
 ✔ Atendimento rápido<br>
-✔ Design profissional<br>
+✔ Design premium<br>
 ✔ Resultados reais
 </p>
 </div>
 
-<div class="section">
-<h2>Depoimentos</h2>
+<div class="section portfolio">
+<h2>📸 Portfólio</h2>
 
-<div class="cards">
-<div class="card">"Muito profissional!"</div>
-<div class="card">"Aumentei minhas vendas!"</div>
-</div>
-
-</div>
-
-<div class="section">
-<h2>FAQ</h2>
-
-<p><b>Prazo?</b><br> Depende do projeto</p>
-<p><b>Pagamento?</b><br> Pix disponível</p>
+<img src="https://picsum.photos/300?1">
+<img src="https://picsum.photos/300?2">
+<img src="https://picsum.photos/300?3">
 
 </div>
 
 <div class="section">
-<h2>Orçamento</h2>
+<h2>💼 Solicitar Orçamento</h2>
 
-<input placeholder="Seu nome"><br>
-<input placeholder="WhatsApp"><br>
-<textarea placeholder="Descreva seu projeto"></textarea><br>
+<input id="nome" placeholder="Seu nome"><br>
+<input id="whatsapp" placeholder="Seu WhatsApp"><br>
+<textarea id="msg" placeholder="Descreva seu projeto"></textarea><br>
 
-<button class="btn" onclick="enviar()">Enviar pedido</button>
-
+<button class="btn" onclick="enviar()">Enviar</button>
 </div>
 
 <footer>
 <p>© Vitória Silva Design</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/5531999999999" target="_blank">💬</a>
+<a class="whatsapp" href="https://wa.me/5531999999999">
+💬
+</a>
 
 <script>
-function enviar(){
-  alert("Orçamento enviado com sucesso!");
+function enviar() {
+  let nome = document.getElementById("nome").value;
+  let msg = document.getElementById("msg").value;
+
+  let texto = `Olá, meu nome é ${nome}. ${msg}`;
+  let link = `https://wa.me/5531990609902?text=${encodeURIComponent(texto)}`;
+
+  window.open(link);
 }
 </script>
 
