@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -63,17 +62,12 @@ p {
   padding:20px;
   border-radius:15px;
   width:250px;
-  transition:0.3s;
-}
-
-.card:hover {
-  transform:translateY(-10px);
 }
 
 .portfolio img {
   width:250px;
-  border-radius:10px;
   margin:10px;
+  border-radius:10px;
 }
 
 footer {
@@ -89,8 +83,8 @@ footer {
   background:#25d366;
   padding:15px;
   border-radius:50%;
-  text-decoration:none;
   color:white;
+  text-decoration:none;
   font-size:22px;
 }
 </style>
@@ -100,70 +94,3 @@ footer {
 
 <header>
 <h1>Vitória Silva Design</h1>
-<p>Transformando marcas em autoridade digital</p>
-
-<a class="btn" href="https://wa.me/5531999999999">
-Falar no WhatsApp
-</a>
-</header>
-
-<div class="section">
-<h2>🚀 Serviços</h2>
-
-<div class="cards">
-<div class="card">🎨 Artes para Instagram</div>
-<div class="card">🌐 Criação de Sites</div>
-<div class="card">📈 Gestão de Tráfego</div>
-</div>
-</div>
-
-<div class="section">
-<h2>💰 Por que escolher?</h2>
-<p>
-✔ Atendimento rápido<br>
-✔ Design premium<br>
-✔ Resultados reais
-</p>
-</div>
-
-<div class="section portfolio">
-<h2>📸 Portfólio</h2>
-
-<img src="https://picsum.photos/300?1">
-<img src="https://picsum.photos/300?2">
-<img src="https://picsum.photos/300?3">
-
-</div>
-
-<div class="section">
-<h2>💼 Solicitar Orçamento</h2>
-
-<input id="nome" placeholder="Seu nome"><br>
-<input id="whatsapp" placeholder="Seu WhatsApp"><br>
-<textarea id="msg" placeholder="Descreva seu projeto"></textarea><br>
-
-<button class="btn" onclick="enviar()">Enviar</button>
-</div>
-
-<footer>
-<p>© Vitória Silva Design</p>
-</footer>
-
-<a class="whatsapp" href="https://wa.me/5531999999999">
-💬
-</a>
-
-<script>
-function enviar() {
-  let nome = document.getElementById("nome").value;
-  let msg = document.getElementById("msg").value;
-
-  let texto = `Olá, meu nome é ${nome}. ${msg}`;
-  let link = `https://wa.me/5531990609902?text=${encodeURIComponent(texto)}`;
-
-  window.open(link);
-}
-</script>
-
-</body>
-</html>
