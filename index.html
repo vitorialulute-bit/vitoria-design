@@ -4,10 +4,73 @@
   <meta charset="UTF-8">
   <title>Vitória Silva Design</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
 
   <!-- Fonte profissional -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
+  <section class="sobre">
+  <h2>Quem é a Vitória?</h2>
+  <p>
+    Sou designer focada em criar sites e artes que não são apenas bonitas,
+    mas que realmente ajudam empresas a se posicionarem melhor e venderem mais.
+    Cada projeto é pensado de forma estratégica e personalizada.
+  </p>
+</section>
+  <section class="processo">
+  <h2>Como funciona meu trabalho</h2>
+
+  <div class="passos">
+    <div>1️⃣ Conversamos e entendo sua necessidade</div>
+    <div>2️⃣ Planejo a melhor solução para seu negócio</div>
+    <div>3️⃣ Crio o design e estrutura profissional</div>
+    <div>4️⃣ Ajustamos e entrego pronto para uso</div>
+  </div>
+</section>
+  
+
+</style>
+..processo {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.passos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: auto;
+}
+}
+
+.escolha h2 {
+  color: #ff4da6;
+  margin-bottom: 40px;
+}
+
+.escolha-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+  <section id="servicos">
+
+.escolha-cards a {
+  background: #111;
+  padding: 30px;
+  border-radius: 20px;
+  width: 260px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.escolha-cards a:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255,77,166,0.25);
+}
   <style>
     body {
       margin: 0;
@@ -143,7 +206,27 @@
   <a class="btn" href="https://wa.me/5531990609902" target="_blank">Falar no WhatsApp</a>
 </div>
 
-<section id="servicos">
+<section class="escolha">
+  <h2>Como posso te ajudar hoje?</h2>
+
+  <div class="escolha-cards">
+    <a href="https://wa.me/5531990609902?text=Quero%20um%20site%20profissional" target="_blank">
+      <h3>🌐 Quero um site</h3>
+      <p>Um site profissional que gere contatos.</p>
+    </a>
+
+    <a href="https://wa.me/5531990609902?text=Quero%20melhorar%20meu%20Instagram" target="_blank">
+      <h3>📱 Quero Instagram</h3>
+      <p>Artes estratégicas e presença digital.</p>
+    </a>
+
+    <a href="https://wa.me/5531990609902?text=Quero%20uma%20identidade%20visual" target="_blank">
+      <h3>🎨 Quero identidade visual</h3>
+      <p>Marca profissional e forte.</p>
+    </a>
+  </div>
+</section>
+  <section id="servicos">
   <h2>Serviços</h2>
   <div class="cards">
    <div class="card">🎨 Design profissional para Instagram e redes sociais</div></div>
