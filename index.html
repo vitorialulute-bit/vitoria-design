@@ -14,13 +14,53 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
 
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #000000, #1a0010);
+    color: #ffffff;
+  }
+
+  header {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.7);
+    position: sticky;
+    top: 0;
+  }
+
+  .menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+
+  .menu li {
+    position: relative;
+  }
+
+  .menu a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 30px;
+    background: #111;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .dropdown:hover .submenu {
+    display: block;
+  }
 </style>
-
-  <section id="servicos">
-
-
-
-  <style>
+``
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
