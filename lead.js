@@ -1,4 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+
 import {
   getFirestore,
   collection,
@@ -17,33 +18,57 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-document.getElementById("leadForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+console.log("Firebase carregado");
 
-  const nome = document.getElementById("nome").value;
-  const telefone = document.getElementById("telefone").value;
-  const email = document.getElementById("email").value;
-  const servico = document.getElementById("servico").value;
-  const observacao = document.getElementById("observacao").value;
+window.addEventListener("DOMContentLoaded", () => {
 
-  try {
-    await addDoc(collection(db, "leads"), {
-      nome,
-      telefone,
-      email,
-      servico,
-      observacao,
-      origem: "Site",
-      status: "Novo Lead",
-      dataEntrada: new Date().toLocaleDateString("pt-BR")
-    });
+  const formulario = document.getElementById("leadForm");
 
-    alert("Lead enviado com sucesso!");
-
-    document.getElementById("leadForm").reset();
-
-  } catch (error) {
-    console.error(error);
-    alert("Erro ao enviar lead.");
+  if (!formulario) {
+    console.error("Formulário leadForm não encontrado");
+    return;
   }
+
+  console.log("Formulário encontrado");
+
+  formulario.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    console.log("Botão clicado");
+
+    const nome = document.getElementById("nome")?.value || "";
+    const telefone = document.getElementById("telefone")?.value || "";
+    const email = document.getElementById("email")?.value || "";
+    const servico = document.getElementById("servico")?.value || "";
+    const observacao = document.getElementById("observacao")?.value || "";
+
+    try {
+
+      await addDoc(collection(db, "leads"), {
+        nome,
+        telefone,
+        email,
+        servico,
+        observacao,
+        origem: "Site",
+        status: "Novo Lead",
+        dataEntrada: new Date().toLocaleString("pt-BR")
+      });
+
+      alert("Lead enviado com sucesso!");
+
+      formulario.reset();
+
+    } catch (erro) {
+
+      console.error("ERRO FIREBASE:", erro);
+
+      alert(
+        "Erro ao enviar lead. Verifique o console ou envie um print do erro."
+      );
+    }
+
+  });
+
 });
