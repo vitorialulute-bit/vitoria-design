@@ -9,6 +9,7 @@ import {
 const db = getFirestore(app);
 
 const form = document.getElementById("leadForm");
+console.log("FORM:", form);
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
