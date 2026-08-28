@@ -83,38 +83,62 @@ async function carregarLeads(){
 
         const snapshot = await getDocs(collection(db,"leads"));
 
-        lista.innerHTML = "";
+novos.innerHTML = "";
+atendimento.innerHTML = "";
+clientes.innerHTML = "";
+perdidos.innerHTML = "";
 
-        if(snapshot.empty){
+if(snapshot.empty){
 
-            lista.innerHTML = "<p>Nenhum lead encontrado.</p>";
-            return;
+    novos.innerHTML = "<p>Nenhum lead encontrado.</p>";
 
-        }
+    return;
+
+}
 
         snapshot.forEach((doc)=>{
 
-            const lead = doc.data();
+    const lead = doc.data();
 
-            lista.innerHTML += `
+    const html = `
 
-            <div class="lead">
+    <div class="lead">
 
-                <strong>${lead.nome || "Sem nome"}</strong><br>
+        <strong>${lead.nome || "Sem nome"}</strong><br>
 
-                📞 ${lead.telefone || ""}<br>
+        📞 ${lead.telefone || ""}<br>
 
-                📧 ${lead.email || ""}<br>
+        📧 ${lead.email || ""}<br>
 
-                💼 ${lead.servico || ""}<br>
+        💼 ${lead.servico || ""}<br>
 
-                📝 ${lead.observacao || ""}
+        📝 ${lead.observacao || ""}<br>
 
-            </div>
+        📌 Status: ${lead.status || "novo"}
 
-            `;
+    </div>
 
-        });
+    `;
+
+    if(lead.status === "novo"){
+
+        novos.innerHTML += html;
+
+    } else if(lead.status === "atendimento"){
+
+        atendimento.innerHTML += html;
+
+    } else if(lead.status === "cliente"){
+
+        clientes.innerHTML += html;
+
+    } else if(lead.status === "perdido"){
+
+        perdidos.innerHTML += html;
+
+    }
+
+});
 
     }catch(erro){
 
