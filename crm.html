@@ -116,7 +116,15 @@ if(snapshot.empty){
 
     📝 ${lead.observacao || ""}<br>
 
-   📌 Status: ${lead.status || "novo"}<br><br>
+📌 Status: ${lead.status || "novo"}<br>
+
+🗒️ Anotações:<br>
+
+<textarea rows="4" cols="35">
+${lead.anotacoes || ""}
+</textarea>
+
+<br><br>
 
 <button onclick="moverLead('${doc.id}','atendimento')">
 📞 Em Atendimento
