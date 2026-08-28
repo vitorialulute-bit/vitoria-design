@@ -38,6 +38,19 @@ h1{
 <body>
 
 <h1>CRM Vitória Design</h1>
+    <div class="card">
+
+    <h2>📊 Resumo</h2>
+
+    <p>🟦 Novos: <span id="totalNovos">0</span></p>
+
+    <p>🟨 Atendimento: <span id="totalAtendimento">0</span></p>
+
+    <p>🟩 Clientes: <span id="totalClientes">0</span></p>
+
+    <p>🟥 Perdidos: <span id="totalPerdidos">0</span></p>
+
+</div>
 
 <div class="card">
     <h2>🟦 Novos Leads</h2>
@@ -78,6 +91,11 @@ const novos = document.getElementById("novos");
 const atendimento = document.getElementById("atendimento");
 const clientes = document.getElementById("clientes");
 const perdidos = document.getElementById("perdidos");
+    const totalNovos = document.getElementById("totalNovos");
+const totalAtendimento = document.getElementById("totalAtendimento");
+const totalClientes = document.getElementById("totalClientes");
+const totalPerdidos = document.getElementById("totalPerdidos");
+``
 
 async function carregarLeads(){
 
@@ -89,6 +107,10 @@ novos.innerHTML = "";
 atendimento.innerHTML = "";
 clientes.innerHTML = "";
 perdidos.innerHTML = "";
+        let contadorNovos = 0;
+let contadorAtendimento = 0;
+let contadorClientes = 0;
+let contadorPerdidos = 0;
 
 if(snapshot.empty){
 
@@ -142,22 +164,26 @@ ${lead.anotacoes || ""}
 `;
 
 if(!lead.status || lead.status === "novo"){
-    
-        novos.innerHTML += html;
 
-    } else if(lead.status === "atendimento"){
+    contadorNovos++;
+    novos.innerHTML += html;
 
-        atendimento.innerHTML += html;
+} else if(lead.status === "atendimento"){
 
-    } else if(lead.status === "cliente"){
+    contadorAtendimento++;
+    atendimento.innerHTML += html;
 
-        clientes.innerHTML += html;
+} else if(lead.status === "cliente"){
 
-    } else if(lead.status === "perdido"){
+    contadorClientes++;
+    clientes.innerHTML += html;
 
-        perdidos.innerHTML += html;
+} else if(lead.status === "perdido"){
 
-    }
+    contadorPerdidos++;
+    perdidos.innerHTML += html;
+
+}
 
 });
 
