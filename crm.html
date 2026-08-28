@@ -186,7 +186,10 @@ if(!lead.status || lead.status === "novo"){
 }
 
 });
-
+totalNovos.textContent = contadorNovos;
+totalAtendimento.textContent = contadorAtendimento;
+totalClientes.textContent = contadorClientes;
+totalPerdidos.textContent = contadorPerdidos;
     }catch(erro){
 
         console.error(erro);
@@ -212,6 +215,7 @@ window.moverLead = async function(id, novoStatus){
         carregarLeads();
 
     }catch(error){
+        
 
         console.error(error);
 
