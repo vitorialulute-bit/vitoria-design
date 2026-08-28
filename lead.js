@@ -23,13 +23,15 @@ if (form) {
     try {
 
       const lead = {
-        nome: document.getElementById("nome").value,
-        telefone: document.getElementById("telefone").value,
-        email: document.getElementById("email")?.value || "",
-        servico: document.getElementById("servico")?.value || "",
-        observacao: document.getElementById("observacao")?.value || "",
-        criadoEm: serverTimestamp()
-      };
+  nome: document.getElementById("nome").value,
+  telefone: document.getElementById("telefone").value,
+  email: document.getElementById("email")?.value || "",
+  servico: document.getElementById("servico")?.value || "",
+  observacao: document.getElementById("observacao")?.value || "",
+  status: "novo",
+  anotacoes: "",
+  criadoEm: serverTimestamp()
+};
 
       console.log("Enviando lead:", lead);
 
