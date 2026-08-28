@@ -100,25 +100,29 @@ if(snapshot.empty){
 
     const lead = doc.data();
 
-    const html = `
+   const html = `
 
-    <div class="lead">
+<div class="lead">
 
-        <strong>${lead.nome || "Sem nome"}</strong><br>
+    <strong>${lead.nome || "Sem nome"}</strong><br>
 
-        📞 ${lead.telefone || ""}<br>
+    📞 ${lead.telefone || ""}<br>
 
-        📧 ${lead.email || ""}<br>
+    📧 ${lead.email || ""}<br>
 
-        💼 ${lead.servico || ""}<br>
+    💼 ${lead.servico || ""}<br>
 
-        📝 ${lead.observacao || ""}<br>
+    📝 ${lead.observacao || ""}<br>
 
-        📌 Status: ${lead.status || "novo"}
+    📌 Status: ${lead.status || "novo"}<br><br>
 
-    </div>
+    <button onclick="moverLead('${doc.id}','atendimento')">
+        📞 Em Atendimento
+    </button>
 
-    `;
+</div>
+
+`;
 
 if(!lead.status || lead.status === "novo"){
     
