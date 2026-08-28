@@ -120,7 +120,7 @@ if(snapshot.empty){
 
     `;
 
-    if(lead.status === "novo"){
+   if(!lead.status || lead.status === "novo"){
 
         novos.innerHTML += html;
 
