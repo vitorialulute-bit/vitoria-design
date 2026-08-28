@@ -122,7 +122,14 @@ if(snapshot.empty){
 📞 Em Atendimento
 </button>
 
-</div>
+<br><br>
+
+<button onclick="moverLead('${doc.id}','cliente')">
+✅ Cliente
+</button>
+
+<button onclick="moverLead('${doc.id}','perdido')">
+❌ Perdido
 
 `;
 
@@ -150,8 +157,9 @@ if(!lead.status || lead.status === "novo"){
 
         console.error(erro);
 
-        lista.innerHTML =
-        "<p>Erro ao carregar leads.</p>";
+      novos.innerHTML =
+"<p>Erro ao carregar leads.</p>";
+
 
     }
 
