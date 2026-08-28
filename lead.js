@@ -25,9 +25,9 @@ if (form) {
       const lead = {
         nome: document.getElementById("nome").value,
         telefone: document.getElementById("telefone").value,
-        email: document.getElementById("email").value,
-        servico: document.getElementById("servico").value,
-        observacao: document.getElementById("observacao").value,
+        email: document.getElementById("email")?.value || "",
+        servico: document.getElementById("servico")?.value || "",
+        observacao: document.getElementById("observacao")?.value || "",
         criadoEm: serverTimestamp()
       };
 
@@ -43,7 +43,7 @@ if (form) {
 
       console.error("Erro ao salvar lead:", erro);
 
-      alert("Erro ao enviar orçamento. Veja o Console.");
+      alert("Erro ao enviar orçamento.");
 
     }
 
