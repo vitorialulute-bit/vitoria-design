@@ -67,8 +67,10 @@ import { app } from "./firebase.js";
 import {
     getFirestore,
     collection,
-    getDocs
-} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js"
+    getDocs,
+    doc,
+    updateDoc
+} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 
 const db = getFirestore(app);
 
@@ -154,7 +156,28 @@ if(!lead.status || lead.status === "novo"){
     }
 
 }
+window.moverLead = async function(id, novoStatus){
 
+    try{
+
+        await updateDoc(
+            doc(db,"leads",id),
+            {
+                status: novoStatus
+            }
+        );
+
+        carregarLeads();
+
+    }catch(error){
+
+        console.error(error);
+
+        alert("Erro ao atualizar status");
+
+    }
+
+}
 carregarLeads();
 
 </script>
