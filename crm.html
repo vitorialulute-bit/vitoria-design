@@ -5,7 +5,46 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CRM Vitória Design</title>
+.lead{
+    border-bottom:1px solid #ddd;
+    padding:10px 0;
+}
 
+body{
+    display:flex;
+}
+
+.menu-lateral{
+    width:250px;
+    min-height:100vh;
+    background:#f8d7e3;
+    padding:20px;
+}
+
+.menu-lateral h2{
+    color:#7c3aed;
+}
+
+.menu-lateral a{
+    display:block;
+    text-decoration:none;
+    color:#333;
+    padding:12px;
+    margin-top:8px;
+    background:white;
+    border-radius:10px;
+}
+
+.menu-lateral a:hover{
+    background:#ffffff;
+}
+
+.conteudo-principal{
+    flex:1;
+    padding:20px;
+}
+
+</style>
 <style>
 
 body{
@@ -55,7 +94,27 @@ h1{
 
 </head>
 
-<body>
+<body
+
+    <div class="menu-lateral">
+
+    <h2>🎀 Vitória Design</h2>
+
+    #✨ Meu Espaço</a>
+
+    #💌 Oportunidades</a>
+
+    #🌷 Clientes</a>
+
+    #📋 Serviços</a>
+
+    #📊 Resultados</a>
+
+    #⚙️ Configurações</a>
+
+</div>
+
+<div class="conteudo-principal">
 
 <h1>CRM Vitória Design</h1>
     <div class="card">
@@ -359,6 +418,7 @@ pesquisa.addEventListener("input", () => {
 carregarLeads();
 
 </script>
+        
 
 </body>
 
