@@ -4,422 +4,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>CRM Vitória Design</title>
-.lead{
-    border-bottom:1px solid #ddd;
-    padding:10px 0;
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
+    font-family:'Segoe UI', sans-serif;
+    background:#faf7f8;
     display:flex;
 }
 
-.menu-lateral{
-    width:250px;
+.menu{
+    width:260px;
     min-height:100vh;
     background:#f8d7e3;
-    padding:20px;
+    padding:25px;
 }
 
-.menu-lateral h2{
-    color:#7c3aed;
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#b56576;
+    margin-bottom:30px;
 }
 
-.menu-lateral a{
+.menu a{
     display:block;
+    background:white;
     text-decoration:none;
     color:#333;
     padding:12px;
-    margin-top:8px;
-    background:white;
-    border-radius:10px;
+    border-radius:12px;
+    margin-bottom:10px;
 }
 
-.menu-lateral a:hover{
-    background:#ffffff;
+.menu a:hover{
+    background:#fff0f5;
 }
 
-.conteudo-principal{
+.conteudo{
     flex:1;
+    padding:30px;
+}
+
+.boas-vindas{
+    margin-bottom:25px;
+}
+
+.boas-vindas h1{
+    color:#b56576;
+    margin-bottom:8px;
+}
+
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.card-dashboard{
+    background:white;
+    border-radius:16px;
     padding:20px;
+    text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
 
-</style>
-<style>
-
-body{
-    font-family:Arial,sans-serif;
-    background:#f3f4f6;
-    margin:20px;
-}
-
-h1{
-    color:#7c3aed;
+.card-dashboard h2{
+    color:#b56576;
+    margin-top:10px;
 }
 
 .card{
     background:white;
+    border-radius:16px;
     padding:20px;
-    margin-bottom:15px;
-    border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,.1);
+    margin-bottom:20px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
 
-.lead{
-    border-bottom:1px solid #ddd;
-    padding:10px 0;
+.btn{
+    background:#e89bb5;
+    color:white;
+    border:none;
+    border-radius:12px;
+    padding:12px 18px;
+    cursor:pointer;
 }
-    .dashboard{
+
+.funil{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(7,1fr);
     gap:15px;
-    margin-top:15px;
 }
 
-.kpi{
-    background:#ffffff;
-    border-radius:10px;
+.etapa{
+    background:#fff;
+    min-height:300px;
+    border-radius:16px;
     padding:15px;
-    text-align:center;
-    box-shadow:0 2px 8px rgba(0,0,0,.1);
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
 
-.kpi h3{
-    margin:0;
-    color:#7c3aed;
-    font-size:30px;
+.etapa h3{
+    font-size:15px;
+    margin-bottom:15px;
+    color:#b56576;
 }
 
 </style>
 
 </head>
 
-<body
+<body>
 
-    <div class="menu-lateral">
+<div class="menu">
 
-    <h2>🎀 Vitória Design</h2>
+    <div class="logo">
+        🎀 Vitória Design
+    </div>
 
     #✨ Meu Espaço</a>
-
     #💌 Oportunidades</a>
-
     #🌷 Clientes</a>
-
     #📋 Serviços</a>
-
     #📊 Resultados</a>
-
     #⚙️ Configurações</a>
 
 </div>
 
-<div class="conteudo-principal">
+<div class="conteudo">
 
-<h1>CRM Vitória Design</h1>
-    <div class="card">
+    <div class="boas-vindas">
 
-    <h3>🔍 Pesquisar Lead</h3>
+        <h1>Bom dia, Vi! 💗</h1>
 
-    <input
-        type="text"
-        id="pesquisa"
-        placeholder="Digite o nome do lead"
-        style="width:100%; padding:10px;"
-    >
+        <p>
+            Aqui está o que está acontecendo no seu negócio hoje.
+        </p>
 
-</div>
-    <div class="card">
-
-    <h2>📊 Resumo</h2>
-
-  <div class="dashboard">
-
-    <div class="kpi">
-        <p>🟦 Novos</p>
-        <h3 id="totalNovos">0</h3>
     </div>
 
-    <div class="kpi">
-        <p>🟨 Atendimento</p>
-        <h3 id="totalAtendimento">0</h3>
-    </div>
-
-    <div class="kpi">
-        <p>🟩 Clientes</p>
-        <h3 id="totalClientes">0</h3>
-    </div>
-
-    <div class="kpi">
-        <p>🟥 Perdidos</p>
-        <h3 id="totalPerdidos">0</h3>
-    </div>
-
-<div class="card">
-    <h2>🟦 Novos Leads</h2>
-    <div id="novos"></div>
-</div>
-
-<div class="card">
-    <h2>🟨 Em Atendimento</h2>
-    <div id="atendimento"></div>
-</div>
-
-<div class="card">
-    <h2>🟩 Clientes</h2>
-    <div id="clientes"></div>
-</div>
-
-<div class="card">
-    <h2>🟥 Perdidos</h2>
-    <div id="perdidos"></div>
-</div>
-</div>
-
-<script type="module">
-
-import { app } from "./firebase.js";
-
-import {
-    getFirestore,
-    collection,
-    getDocs,
-    doc,
-    updateDoc,
-    getDoc
-} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
-
-const db = getFirestore(app);
-
-const novos = document.getElementById("novos");
-const atendimento = document.getElementById("atendimento");
-const clientes = document.getElementById("clientes");
-const perdidos = document.getElementById("perdidos");
-    
-    const pesquisa = document.getElementById("pesquisa");
-    
-    const totalNovos = document.getElementById("totalNovos");
-const totalAtendimento = document.getElementById("totalAtendimento");
-const totalClientes = document.getElementById("totalClientes");
-const totalPerdidos = document.getElementById("totalPerdidos");
-
-async function carregarLeads(){
-
-    try{
-
-        const snapshot = await getDocs(collection(db,"leads"));
-
-novos.innerHTML = "";
-atendimento.innerHTML = "";
-clientes.innerHTML = "";
-perdidos.innerHTML = "";
-        let contadorNovos = 0;
-let contadorAtendimento = 0;
-let contadorClientes = 0;
-let contadorPerdidos = 0;
-
-if(snapshot.empty){
-
-    novos.innerHTML = "<p>Nenhum lead encontrado.</p>";
-
-    return;
-
-}
-
-        snapshot.forEach((doc)=>{
-
-    const lead = doc.data();
-            const termo = pesquisa.value.toLowerCase();
-
-if(
-    termo &&
-    !lead.nome?.toLowerCase().includes(termo)
-){
-    return;
-}
-
-   const html = `
-
-<div class="lead">
-
-    <strong>${lead.nome || "Sem nome"}</strong><br>
-
-    📞 ${lead.telefone || ""}<br>
-
-    📧 ${lead.email || ""}<br>
-
-    💼 ${lead.servico || ""}<br>
-
-    📝 ${lead.observacao || ""}<br>
-
-📌 Status: ${lead.status || "novo"}<br>
-
-📅 Último contato: ${lead.ultimoContato || "Nunca"}<br>
-
-🗒️ Anotações:<br>
-
-<textarea
-id="anotacao-${doc.id}"
-rows="4"
-cols="35"
->${lead.anotacoes || ""}</textarea>
-
-<br><br>
-
-<button onclick="moverLead('${doc.id}','atendimento')">
-📞 Em Atendimento
-</button>
-<button onclick="moverLead('${doc.id}','cliente')">
-✅ Cliente
-</button>
-<button onclick="moverLead('${doc.id}','perdido')">
-❌ Perdido
-</button>
-<br><br>
-
-<button onclick="salvarAnotacao('${doc.id}')">
-💾 Salvar Anotações
-</button>
-
-<br><br>
-
-<button onclick="registrarContato('${doc.id}')">
-📅 Registrar Contato
-</button>
-
-
-`;
-
-if(!lead.status || lead.status === "novo"){
-
-    contadorNovos++;
-    novos.innerHTML += html;
-
-} else if(lead.status === "atendimento"){
-
-    contadorAtendimento++;
-    atendimento.innerHTML += html;
-
-} else if(lead.status === "cliente"){
-
-    contadorClientes++;
-    clientes.innerHTML += html;
-
-} else if(lead.status === "perdido"){
-
-    contadorPerdidos++;
-    perdidos.innerHTML += html;
-
-}
-
-});
-totalNovos.textContent = contadorNovos;
-totalAtendimento.textContent = contadorAtendimento;
-totalClientes.textContent = contadorClientes;
-totalPerdidos.textContent = contadorPerdidos;
-    }catch(erro){
-
-        console.error(erro);
-
-      novos.innerHTML =
-"<p>Erro ao carregar leads.</p>";
-
-
-    }
-
-}
-window.salvarAnotacao = async function(id){
-window.registrarContato = async function(id){
-
-    try{
-
-        const hoje = new Date().toLocaleDateString("pt-BR");
-
-        await updateDoc(
-            doc(db,"leads",id),
-            {
-                ultimoContato: hoje
-            }
-        );
-
-        carregarLeads();
-
-        alert("Contato registrado!");
-
-    }catch(error){
-
-        console.error(error);
-
-        alert("Erro ao registrar contato");
-
-    }
-
-}
-   // código salvar anotação
-
-}
-
-window.moverLead = async function(id, novoStatus){
-
-   // código mover lead
-
-}
-
-    try{
-
-        const texto =
-        document.getElementById(
-            `anotacao-${id}`
-        ).value;
-
-        await updateDoc(
-            doc(db,"leads",id),
-            {
-                anotacoes: texto
-            }
-        );
-
-        alert("Anotação salva!");
-
-    }catch(error){
-
-        console.error(error);
-
-        alert("Erro ao salvar anotação.");
-
-    }
-
-}
-    try{
-
-        await updateDoc(
-            doc(db,"leads",id),
-            {
-                status: novoStatus
-            }
-        );
-
-        carregarLeads();
-
-    }catch(error){
-        
-
-        console.error(error);
-
-        alert("Erro ao atualizar status");
-
-    }
-pesquisa.addEventListener("input", () => {
-
-    carregarLeads();
-
-});
-}
-carregarLeads();
-
-</script>
-        
-
-</body>
-
-</html>
+    <div class="dashboard">
+
+        <div class="card-dashboard">
+            🌸
+            <h2>12</h2>
+            <p>Leads Novos</p>
+        </div>
+
+        <div class
