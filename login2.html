@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login CRM Vitória Design</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f3f4f6;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.card{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 2px 15px rgba(0,0,0,.1);
+    width:350px;
+    text-align:center;
+}
+
+h1{
+    color:#7c3aed;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    margin-bottom:15px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#7c3aed;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>CRM Vitória Design</h1>
+
+<p>Olá, Vitória 👋</p>
+
+<input
+type="password"
+id="senha"
+placeholder="Digite sua senha">
+
+<button onclick="entrar()">
+Entrar
+</button>
+
+</div>
+
+<script>
+
+function entrar(){
+
+    const senha =
+    document.getElementById("senha").value;
+
+    if(senha === "201815"){
+
+        
