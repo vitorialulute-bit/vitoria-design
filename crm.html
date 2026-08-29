@@ -111,7 +111,6 @@ const perdidos = document.getElementById("perdidos");
 const totalAtendimento = document.getElementById("totalAtendimento");
 const totalClientes = document.getElementById("totalClientes");
 const totalPerdidos = document.getElementById("totalPerdidos");
-``
 
 async function carregarLeads(){
 
@@ -180,7 +179,7 @@ cols="35"
 <button onclick="moverLead('${doc.id}','cliente')">
 ✅ Cliente
 </button>
-<button onclick="moverLead('${doc.id}','Perdido')">
+<button onclick="moverLead('${doc.id}','perdido')">
 ❌ Perdido
 </button>
 <br><br>
@@ -231,8 +230,17 @@ totalPerdidos.textContent = contadorPerdidos;
     }
 
 }
-window.moverLead = async function(id, novoStatus){
 window.salvarAnotacao = async function(id){
+
+   // código salvar anotação
+
+}
+
+window.moverLead = async function(id, novoStatus){
+
+   // código mover lead
+
+}
 
     try{
 
