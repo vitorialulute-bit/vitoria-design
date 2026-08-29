@@ -75,8 +75,19 @@ Entrar
 
 function entrar(){
 
-    alert("Botão funcionando");
+    const senha =
+    document.getElementById("senha").value;
 
-    window.location.href = "crm.html";
+    if(senha === "201815"){
+
+        window.location.href = "./crm.html";
+
+    }else{
+
+        alert("Senha incorreta");
+
+    }
 
 }
+
+</script>
