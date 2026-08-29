@@ -245,7 +245,11 @@ window.moverLead = async function(id, novoStatus){
         alert("Erro ao atualizar status");
 
     }
+pesquisa.addEventListener("input", () => {
 
+    carregarLeads();
+
+});
 }
 carregarLeads();
 
