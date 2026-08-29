@@ -94,7 +94,9 @@ import {
     collection,
     getDocs,
     doc,
-    updateDoc
+    updateDoc,
+    getDoc
+}
 } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 
 const db = getFirestore(app);
@@ -165,9 +167,11 @@ if(
 
 🗒️ Anotações:<br>
 
-<textarea rows="4" cols="35">
-${lead.anotacoes || ""}
-</textarea>
+<textarea
+id="anotacao-${doc.id}"
+rows="4"
+cols="35"
+>${lead.anotacoes || ""}</textarea>
 
 <br><br>
 
@@ -180,7 +184,11 @@ ${lead.anotacoes || ""}
 <button onclick="moverLead('${doc.id}','Perdido')">
 ❌ Perdido
 </button>
+<br><br>
 
+<button onclick="salvarAnotacao('${doc.id}')">
+💾 Salvar Anotações
+</button>
 <br><br>
 
 
@@ -225,7 +233,33 @@ totalPerdidos.textContent = contadorPerdidos;
 
 }
 window.moverLead = async function(id, novoStatus){
+window.salvarAnotacao = async function(id){
 
+    try{
+
+        const texto =
+        document.getElementById(
+            `anotacao-${id}`
+        ).value;
+
+        await updateDoc(
+            doc(db,"leads",id),
+            {
+                anotacoes: texto
+            }
+        );
+
+        alert("Anotação salva!");
+
+    }catch(error){
+
+        console.error(error);
+
+        alert("Erro ao salvar anotação.");
+
+    }
+
+}
     try{
 
         await updateDoc(
