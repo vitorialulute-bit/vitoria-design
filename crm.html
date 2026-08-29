@@ -1,51 +1,12 @@
-&lt;!DOCTYPE html&gt;
-&lt;html lang="pt-BR"&gt;
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-&lt;head&gt;
-&lt;meta charset="UTF-8"&gt;
-&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-&lt;title&gt;CRM Vitória Design&lt;/title&gt;
-.lead{
-    border-bottom:1px solid #ddd;
-    padding:10px 0;
-}
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRM Vitória Design</title>
 
-body{
-    display:flex;
-}
-
-.menu-lateral{
-    width:250px;
-    min-height:100vh;
-    background:#f8d7e3;
-    padding:20px;
-}
-
-.menu-lateral h2{
-    color:#7c3aed;
-}
-
-.menu-lateral a{
-    display:block;
-    text-decoration:none;
-    color:#333;
-    padding:12px;
-    margin-top:8px;
-    background:white;
-    border-radius:10px;
-}
-
-.menu-lateral a:hover{
-    background:#ffffff;
-}
-
-.conteudo-principal{
-    flex:1;
-    padding:20px;
-}
-
-&lt;/style&gt;
-&lt;style&gt;
+<style>
 
 body{
     font-family:Arial,sans-serif;
@@ -69,114 +30,50 @@ h1{
     border-bottom:1px solid #ddd;
     padding:10px 0;
 }
-    .dashboard{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-    margin-top:15px;
-}
 
-.kpi{
-    background:#ffffff;
-    border-radius:10px;
-    padding:15px;
-    text-align:center;
-    box-shadow:0 2px 8px rgba(0,0,0,.1);
-}
+</style>
 
-.kpi h3{
-    margin:0;
-    color:#7c3aed;
-    font-size:30px;
-}
+</head>
 
-&lt;/style&gt;
+<body>
 
-&lt;/head&gt;
+<h1>CRM Vitória Design</h1>
+    <div class="card">
 
-&lt;body
+    <h2>📊 Resumo</h2>
 
-    &lt;div class="menu-lateral"&gt;
+    <p>🟦 Novos: <span id="totalNovos">0</span></p>
 
-    &lt;h2&gt;🎀 Vitória Design&lt;/h2&gt;
+    <p>🟨 Atendimento: <span id="totalAtendimento">0</span></p>
 
-    #✨ Meu Espaço&lt;/a&gt;
+    <p>🟩 Clientes: <span id="totalClientes">0</span></p>
 
-    #💌 Oportunidades&lt;/a&gt;
+    <p>🟥 Perdidos: <span id="totalPerdidos">0</span></p>
 
-    #🌷 Clientes&lt;/a&gt;
+</div>
 
-    #📋 Serviços&lt;/a&gt;
+<div class="card">
+    <h2>🟦 Novos Leads</h2>
+    <div id="novos"></div>
+</div>
 
-    #📊 Resultados&lt;/a&gt;
+<div class="card">
+    <h2>🟨 Em Atendimento</h2>
+    <div id="atendimento"></div>
+</div>
 
-    #⚙️ Configurações&lt;/a&gt;
+<div class="card">
+    <h2>🟩 Clientes</h2>
+    <div id="clientes"></div>
+</div>
 
-&lt;/div&gt;
+<div class="card">
+    <h2>🟥 Perdidos</h2>
+    <div id="perdidos"></div>
+</div>
+</div>
 
-&lt;div class="conteudo-principal"&gt;
-
-&lt;h1&gt;CRM Vitória Design&lt;/h1&gt;
-    &lt;div class="card"&gt;
-
-    &lt;h3&gt;🔍 Pesquisar Lead&lt;/h3&gt;
-
-    &lt;input
-        type="text"
-        id="pesquisa"
-        placeholder="Digite o nome do lead"
-        style="width:100%; padding:10px;"
-    &gt;
-
-&lt;/div&gt;
-    &lt;div class="card"&gt;
-
-    &lt;h2&gt;📊 Resumo&lt;/h2&gt;
-
-  &lt;div class="dashboard"&gt;
-
-    &lt;div class="kpi"&gt;
-        &lt;p&gt;🟦 Novos&lt;/p&gt;
-        &lt;h3 id="totalNovos"&gt;0&lt;/h3&gt;
-    &lt;/div&gt;
-
-    &lt;div class="kpi"&gt;
-        &lt;p&gt;🟨 Atendimento&lt;/p&gt;
-        &lt;h3 id="totalAtendimento"&gt;0&lt;/h3&gt;
-    &lt;/div&gt;
-
-    &lt;div class="kpi"&gt;
-        &lt;p&gt;🟩 Clientes&lt;/p&gt;
-        &lt;h3 id="totalClientes"&gt;0&lt;/h3&gt;
-    &lt;/div&gt;
-
-    &lt;div class="kpi"&gt;
-        &lt;p&gt;🟥 Perdidos&lt;/p&gt;
-        &lt;h3 id="totalPerdidos"&gt;0&lt;/h3&gt;
-    &lt;/div&gt;
-
-&lt;div class="card"&gt;
-    &lt;h2&gt;🟦 Novos Leads&lt;/h2&gt;
-    &lt;div id="novos"&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="card"&gt;
-    &lt;h2&gt;🟨 Em Atendimento&lt;/h2&gt;
-    &lt;div id="atendimento"&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="card"&gt;
-    &lt;h2&gt;🟩 Clientes&lt;/h2&gt;
-    &lt;div id="clientes"&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="card"&gt;
-    &lt;h2&gt;🟥 Perdidos&lt;/h2&gt;
-    &lt;div id="perdidos"&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;script type="module"&gt;
+<script type="module">
 
 import { app } from "./firebase.js";
 
@@ -185,9 +82,8 @@ import {
     collection,
     getDocs,
     doc,
-    updateDoc,
-    getDoc
-} from "<a href="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js&quot;;" target="blank" rel="noopener noreferrer" title="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js&quot;;" class="fai-ChatInputEntitytext __6erqso0 fyind8e f1tx3yz7 f1deo86v f1eh06m1 f1iescvh">https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";</a>
+    updateDoc
+} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 
 const db = getFirestore(app);
 
@@ -195,9 +91,6 @@ const novos = document.getElementById("novos");
 const atendimento = document.getElementById("atendimento");
 const clientes = document.getElementById("clientes");
 const perdidos = document.getElementById("perdidos");
-    
-    const pesquisa = document.getElementById("pesquisa");
-    
     const totalNovos = document.getElementById("totalNovos");
 const totalAtendimento = document.getElementById("totalAtendimento");
 const totalClientes = document.getElementById("totalClientes");
@@ -220,72 +113,51 @@ let contadorPerdidos = 0;
 
 if(snapshot.empty){
 
-    novos.innerHTML = "&lt;p&gt;Nenhum lead encontrado.&lt;/p&gt;";
+    novos.innerHTML = "<p>Nenhum lead encontrado.</p>";
 
     return;
 
 }
 
-        snapshot.forEach((doc)=&gt;{
+        snapshot.forEach((doc)=>{
 
     const lead = doc.data();
-            const termo = pesquisa.value.toLowerCase();
-
-if(
-    termo &&
-    !lead.nome?.toLowerCase().includes(termo)
-){
-    return;
-}
 
    const html = `
 
-&lt;div class="lead"&gt;
+<div class="lead">
 
-    &lt;strong&gt;${lead.nome || "Sem nome"}&lt;/strong&gt;&lt;br&gt;
+    <strong>${lead.nome || "Sem nome"}</strong><br>
 
-    📞 ${lead.telefone || ""}&lt;br&gt;
+    📞 ${lead.telefone || ""}<br>
 
-    📧 ${lead.email || ""}&lt;br&gt;
+    📧 ${lead.email || ""}<br>
 
-    💼 ${lead.servico || ""}&lt;br&gt;
+    💼 ${lead.servico || ""}<br>
 
-    📝 ${lead.observacao || ""}&lt;br&gt;
+    📝 ${lead.observacao || ""}<br>
 
-📌 Status: ${lead.status || "novo"}&lt;br&gt;
+📌 Status: ${lead.status || "novo"}<br>
 
-📅 Último contato: ${lead.ultimoContato || "Nunca"}&lt;br&gt;
+🗒️ Anotações:<br>
 
-🗒️ Anotações:&lt;br&gt;
+<textarea rows="4" cols="35">
+${lead.anotacoes || ""}
+</textarea>
 
-&lt;textarea
-id="anotacao-${doc.id}"
-rows="4"
-cols="35"
-&gt;${lead.anotacoes || ""}&lt;/textarea&gt;
+<br><br>
 
-&lt;br&gt;&lt;br&gt;
-
-&lt;button onclick="moverLead('${doc.id}','atendimento')"&gt;
+<button onclick="moverLead('${doc.id}','atendimento')">
 📞 Em Atendimento
-&lt;/button&gt;
-&lt;button onclick="moverLead('${doc.id}','cliente')"&gt;
+</button>
+<button onclick="moverLead('${doc.id}','cliente')">
 ✅ Cliente
-&lt;/button&gt;
-&lt;button onclick="moverLead('${doc.id}','perdido')"&gt;
+</button>
+<button onclick="moverLead('${doc.id}','perdido')">
 ❌ Perdido
-&lt;/button&gt;
-&lt;br&gt;&lt;br&gt;
+</button>
 
-&lt;button onclick="salvarAnotacao('${doc.id}')"&gt;
-💾 Salvar Anotações
-&lt;/button&gt;
-
-&lt;br&gt;&lt;br&gt;
-
-&lt;button onclick="registrarContato('${doc.id}')"&gt;
-📅 Registrar Contato
-&lt;/button&gt;
+<br><br>
 
 
 `;
@@ -322,74 +194,14 @@ totalPerdidos.textContent = contadorPerdidos;
         console.error(erro);
 
       novos.innerHTML =
-"&lt;p&gt;Erro ao carregar leads.&lt;/p&gt;";
+"<p>Erro ao carregar leads.</p>";
 
 
     }
 
 }
-window.salvarAnotacao = async function(id){
-window.registrarContato = async function(id){
-
-    try{
-
-        const hoje = new Date().toLocaleDateString("pt-BR");
-
-        await updateDoc(
-            doc(db,"leads",id),
-            {
-                ultimoContato: hoje
-            }
-        );
-
-        carregarLeads();
-
-        alert("Contato registrado!");
-
-    }catch(error){
-
-        console.error(error);
-
-        alert("Erro ao registrar contato");
-
-    }
-
-}
-   // código salvar anotação
-
-}
-
 window.moverLead = async function(id, novoStatus){
 
-   // código mover lead
-
-}
-
-    try{
-
-        const texto =
-        document.getElementById(
-            anotacao-${id}
-        ).value;
-
-        await updateDoc(
-            doc(db,"leads",id),
-            {
-                anotacoes: texto
-            }
-        );
-
-        alert("Anotação salva!");
-
-    }catch(error){
-
-        console.error(error);
-
-        alert("Erro ao salvar anotação.");
-
-    }
-
-}
     try{
 
         await updateDoc(
@@ -409,18 +221,12 @@ window.moverLead = async function(id, novoStatus){
         alert("Erro ao atualizar status");
 
     }
-pesquisa.addEventListener("input", () =&gt; {
 
-    carregarLeads();
-
-});
 }
 carregarLeads();
 
-&lt;/script&gt;
-        
+</script>
 
-&lt;/body&gt;
+</body>
 
-&lt;/html&gt;
-<br aria-hidden="true">
+</html>
