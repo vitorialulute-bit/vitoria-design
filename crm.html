@@ -40,6 +40,18 @@ h1{
 <h1>CRM Vitória Design</h1>
     <div class="card">
 
+    <h3>🔍 Pesquisar Lead</h3>
+
+    <input
+        type="text"
+        id="pesquisa"
+        placeholder="Digite o nome do lead"
+        style="width:100%; padding:10px;"
+    >
+
+</div>
+    <div class="card">
+
     <h2>📊 Resumo</h2>
 
     <p>🟦 Novos: <span id="totalNovos">0</span></p>
@@ -91,6 +103,9 @@ const novos = document.getElementById("novos");
 const atendimento = document.getElementById("atendimento");
 const clientes = document.getElementById("clientes");
 const perdidos = document.getElementById("perdidos");
+    
+    const pesquisa = document.getElementById("pesquisa");
+    
     const totalNovos = document.getElementById("totalNovos");
 const totalAtendimento = document.getElementById("totalAtendimento");
 const totalClientes = document.getElementById("totalClientes");
@@ -123,6 +138,14 @@ if(snapshot.empty){
         snapshot.forEach((doc)=>{
 
     const lead = doc.data();
+            const termo = pesquisa.value.toLowerCase();
+
+if(
+    termo &&
+    !lead.nome?.toLowerCase().includes(termo)
+){
+    return;
+}
 
    const html = `
 
