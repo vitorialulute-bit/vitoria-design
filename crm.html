@@ -30,6 +30,26 @@ h1{
     border-bottom:1px solid #ddd;
     padding:10px 0;
 }
+    .dashboard{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:15px;
+}
+
+.kpi{
+    background:#ffffff;
+    border-radius:10px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+.kpi h3{
+    margin:0;
+    color:#7c3aed;
+    font-size:30px;
+}
 
 </style>
 
@@ -54,15 +74,27 @@ h1{
 
     <h2>📊 Resumo</h2>
 
-    <p>🟦 Novos: <span id="totalNovos">0</span></p>
+  <div class="dashboard">
 
-    <p>🟨 Atendimento: <span id="totalAtendimento">0</span></p>
+    <div class="kpi">
+        <p>🟦 Novos</p>
+        <h3 id="totalNovos">0</h3>
+    </div>
 
-    <p>🟩 Clientes: <span id="totalClientes">0</span></p>
+    <div class="kpi">
+        <p>🟨 Atendimento</p>
+        <h3 id="totalAtendimento">0</h3>
+    </div>
 
-    <p>🟥 Perdidos: <span id="totalPerdidos">0</span></p>
+    <div class="kpi">
+        <p>🟩 Clientes</p>
+        <h3 id="totalClientes">0</h3>
+    </div>
 
-</div>
+    <div class="kpi">
+        <p>🟥 Perdidos</p>
+        <h3 id="totalPerdidos">0</h3>
+    </div>
 
 <div class="card">
     <h2>🟦 Novos Leads</h2>
