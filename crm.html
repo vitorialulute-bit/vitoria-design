@@ -163,6 +163,8 @@ if(
 
 📌 Status: ${lead.status || "novo"}<br>
 
+📅 Último contato: ${lead.ultimoContato || "Nunca"}<br>
+
 🗒️ Anotações:<br>
 
 <textarea
@@ -187,7 +189,12 @@ cols="35"
 <button onclick="salvarAnotacao('${doc.id}')">
 💾 Salvar Anotações
 </button>
+
 <br><br>
+
+<button onclick="registrarContato('${doc.id}')">
+📅 Registrar Contato
+</button>
 
 
 `;
@@ -231,7 +238,32 @@ totalPerdidos.textContent = contadorPerdidos;
 
 }
 window.salvarAnotacao = async function(id){
+window.registrarContato = async function(id){
 
+    try{
+
+        const hoje = new Date().toLocaleDateString("pt-BR");
+
+        await updateDoc(
+            doc(db,"leads",id),
+            {
+                ultimoContato: hoje
+            }
+        );
+
+        carregarLeads();
+
+        alert("Contato registrado!");
+
+    }catch(error){
+
+        console.error(error);
+
+        alert("Erro ao registrar contato");
+
+    }
+
+}
    // código salvar anotação
 
 }
