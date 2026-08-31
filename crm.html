@@ -38,6 +38,7 @@ h1{
 <body>
 
 <h1>CRM Vitória Design</h1>
+    <button onclick="sair()">Sair</button>
     <div class="card">
 
     <h2>📊 Resumo</h2>
@@ -85,7 +86,11 @@ import {
     updateDoc
 } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 
-const db = getFirestore(app);
+const db = getFirestore(app);if(!sessionStorage.getItem("crmLiberado")){
+
+    window.location.href = "login2.html";
+
+}
 
 const novos = document.getElementById("novos");
 const atendimento = document.getElementById("atendimento");
@@ -224,6 +229,13 @@ window.moverLead = async function(id, novoStatus){
 
 }
 carregarLeads();
+    window.sair = function(){
+
+    sessionStorage.removeItem("crmLiberado");
+
+    window.location.href = "login2.html";
+
+}
 
 </script>
 
