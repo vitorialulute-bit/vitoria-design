@@ -80,9 +80,14 @@ function entrar(){
 
     if(senha === "201815"){
 
-        window.location.href = "./crm.html";
+    sessionStorage.setItem(
+        "crmLiberado",
+        "sim"
+    );
 
-    }else{
+    window.location.href = "./crm.html";
+
+}else{
 
         alert("Senha incorreta");
 
