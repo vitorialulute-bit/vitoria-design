@@ -86,11 +86,14 @@ import {
     updateDoc
 } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 
-const db = getFirestore(app);if(!sessionStorage.getItem("crmLiberado")){
+const db = getFirestore(app);
+    
+if(!sessionStorage.getItem("crmLiberado")){
 
-    window.location.href = "login2.html";
+    window.location.href = "./login2.html";
 
 }
+
 
 const novos = document.getElementById("novos");
 const atendimento = document.getElementById("atendimento");
